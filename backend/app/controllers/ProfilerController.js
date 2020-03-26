@@ -2,7 +2,6 @@ const connection = require('../database/connection');
 
 module.exports = {
   async index(req, res) {
-    console.log(req.headers);
     const ong_id = req.headers.authorization;
 
     const incidents = await connection('incidents')
