@@ -1,4 +1,5 @@
 const connection = require('../database/connection');
+const offset = 10;
 module.exports = {
   async index(req, res) {
     const { page = 1 } = req.query;
@@ -7,8 +8,8 @@ module.exports = {
 
     const incidents = await connection('incidents')
       .join('ongs', 'ongs.id', '=', 'incidents.ong_id')
-      .limit(5)
-      .offset((page - 1) * 5)
+      .limit(offset)
+      .offset((page - 1) * offset)
       .select(['incidents.*',
         'ongs.name',
         'ongs.email',
