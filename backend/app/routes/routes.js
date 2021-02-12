@@ -53,7 +53,7 @@ routes.post(
     }),
     [Segments.HEADERS]: Joi.object().keys({
       authorization: Joi.string().required()
-    })
+    }).options({allowUnknown : true })
   }),
   IncidentController.create
 );

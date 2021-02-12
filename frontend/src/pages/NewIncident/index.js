@@ -24,7 +24,7 @@ function NewIncident() {
       value 
     };
 
-    try {
+    try {      
       await api.post('incidents', data, {
         headers:{
           Authorization: ongId,
