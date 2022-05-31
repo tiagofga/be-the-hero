@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 
 import api from '../../services/api'
@@ -11,7 +11,7 @@ function NewIncident() {
   const [description, setDescription] = useState('');
   const [value, setValue] = useState('');
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const ongId = localStorage.getItem('ongId');
 
@@ -19,18 +19,18 @@ function NewIncident() {
     e.preventDefault();
 
     const data ={
-      title, 
+      title,
       description,
-      value 
+      value
     };
 
-    try {      
+    try {
       await api.post('incidents', data, {
         headers:{
           Authorization: ongId,
         }
       });
-      history.push('/profile');
+      navigate('/profile');
 
 
     } catch (error) {

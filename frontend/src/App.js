@@ -2,12 +2,12 @@ import React from "react";
 
 import './global.css';
 
-import Routes from "./Routes";
+import RoutesApp from "./Routes";
 
 function App() {
   return (
     <div>
-      <Routes />
+      <RoutesApp />
     </div>
   );
 }

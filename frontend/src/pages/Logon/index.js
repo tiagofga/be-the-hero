@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiLogIn } from "react-icons/fi";
 
 import api from "../../services/api";
@@ -10,7 +10,7 @@ import logoImg from "../../assets/logo.svg";
 
 function Logon() {
   const [id, setId] = useState("");
-  const history = useHistory();
+  const navigate = useNavigate();
 
   async function handleLogin(e){
     e.preventDefault();
@@ -19,7 +19,7 @@ function Logon() {
       const response = await api.post('/session', {id});
       localStorage.setItem('ongId', id);
       localStorage.setItem('ongName', response.data.name);
-      history.push('/profile');
+      navigate('/profile');
 
     }catch(err){
       console.log(err);

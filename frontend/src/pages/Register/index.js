@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 
 import api from "../../services/api";
@@ -14,7 +14,7 @@ function Register() {
   const [city, setCity] = useState("");
   const [uf, setUf] = useState("");
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   async function  handleRegister(e) {
     e.preventDefault();
@@ -28,7 +28,7 @@ function Register() {
     }catch(err){
       alert('Erro no cadastro, tente novamente');
     }
-    history.push('/');
+    navigate('/');
   }
   return (
     <div className="register-container">
