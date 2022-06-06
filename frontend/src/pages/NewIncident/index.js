@@ -34,6 +34,7 @@ function NewIncident() {
 
 
     } catch (error) {
+      console.log(error)
       alert('Erro ao cadastrar caso, tente novamente')
     }
 
