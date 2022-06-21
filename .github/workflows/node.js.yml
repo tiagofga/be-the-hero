@@ -25,15 +25,15 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '16.x'    
-    - run: cd backend && npm install
+    - run: cd backend && npm i
     - run: cd backend && npm ci
     - run: cd backend && npm run build --if-present
     - run: cd backend &&npm test
-    - run: cd frontend && npm install
+    - run: cd frontend && npm i
     - run: cd frontend && npm ci
     - run: cd frontend && npm run build --if-present
     - run: cd frontend && npm test
-    - run: cd mobile && npm install
+    - run: cd mobile && npm i
     - run: cd mobile && npm ci
     - run: cd mobile && npm run build --if-present
     - run: cd mobile && npm test
