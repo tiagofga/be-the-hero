@@ -21,19 +21,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Node
       uses: actions/setup-node@v3
       with:
-        node-version: '16.x'   
-    - run: cd backend && npm i
-    - run: cd backend && npm ci
-    - run: cd backend && npm run build --if-present
-    - run: cd backend &&npm test
-    - run: cd frontend && npm i
-    - run: cd frontend && npm ci
-    - run: cd frontend && npm run build --if-present
-    - run: cd frontend && npm test
-    - run: cd mobile && npm i
-    - run: cd mobile && npm ci
-    - run: cd mobile && npm run build --if-present
-    - run: cd mobile && npm test
+        node-version: '17.x'
+    - run: cd backend && yarn
+    - run: cd backend && yarn run build --if-present
+    - run: cd backend && yarn test
+    - run: cd frontend && yarn
+    - run: cd frontend && yarn run build --if-present
+    - run: cd frontend && yarn test
+    - run: cd mobile && yarn
+    - run: cd mobile && yarn run build --if-present
+    - run: cd mobile && yarn test
+
