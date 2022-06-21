@@ -24,14 +24,13 @@ jobs:
     - name: Node
       uses: actions/setup-node@v3
       with:
-        node-version: '17.x'
+        node-version: '16.x'
     - run: cd backend && yarn
-    - run: cd backend && yarn run --if-present build
     - run: cd backend && yarn test
     - run: cd frontend && yarn
-    - run: cd frontend && yarn run --if-present build
+    - run: cd frontend && yarn build
     - run: cd frontend && yarn test
     - run: cd mobile && yarn
-    - run: cd mobile && yarn run --if-present build
+    - run: cd mobile && yarn run build --if-present
     - run: cd mobile && yarn test
 
