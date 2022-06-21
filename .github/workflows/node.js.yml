@@ -25,5 +25,3 @@ jobs:
     - run: cd frontend && yarn build
     - run: cd frontend && yarn test --passWithNoTests
     - run: cd mobile && yarn
-    - run: cd mobile && yarn test --passWithNoTests
-
