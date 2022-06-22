@@ -31,4 +31,16 @@ describe('ONG', () => {
     console.log(res.body);
 
   });
+
+  it('should able to get all ONG', async () => {
+    const res = await request(app)
+    .get('/ongs')
+    //.set('Authorization', 'value') //para setar param do header
+    .send();
+
+    expect(res.status).toBe(200);
+
+    console.log(res.body);
+
+  });
 });
