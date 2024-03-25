@@ -1,4 +1,5 @@
 import React from "react";
+import SpeedInsights from "@vercel/speed-insights"
 
 import './global.css';
 
@@ -6,9 +7,10 @@ import RoutesApp from "./Routes";
 
 function App() {
   return (
-    <div>
+    <div>      
       <RoutesApp />
-    </div>
+      <SpeedInsights />
+    </div>    
   );
 }
 
